@@ -1,0 +1,19 @@
+/*Hoja de estilo personalizada*/
+/* CSS: cascading style sheet */
+/*Selector de etiqueta*/
+body {
+    background-color: #6A686D;
+    color: #FCA289;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main {
+    text-align:left;
+}
+h1{
+    color: #CF8A96;
+}
+footer{
+    
+    color: #F9F871;
+    text-align: end;
+}
