@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./script.js">
+    <title>Document</title>
+    <script>
+        console.log("holi");
+    </script>
+</head>
+<body>
+    <main>
+        <article>
+            <h1 id="title" onclick="handleTitle()" class="title-article">Sesion Web07</h1>
+            <p id="description" onclick="changeColor('red')">Esta es la sesion 07 de web con Serch</p>
+        </article>
+
+        <article>
+            <h2 class="title-article">Historia del elote</h2>
+            <p onclick="changeColorTextUsingThis('#CCCCFF',this)">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem reprehenderit beatae amet incidunt id.</p>
+            <p onclick="changeColorTextUsingThis('yellow',this)">I like <strong>this</strong> class</p>
+
+            <p onclick="changeColorTextUsingThis('red',this)">Elote en vaso para mi, pls</p>
+            <p onclick="changeColorTextUsingThis('#5D6D7E',this)">A Serch le gusta el elote amarillo completo del centro de la republica</p>
+        </article>
+
+        <article>
+            <button onclick="changeColorTitles()">Cambiar color titulos</button>
+        </article>
+
+        <article>
+            <button onclick="resetColorParagraph()">Reset Color Paragraph</button>
+        </article>
+
+    </main>
+    <script src="./script.js"></script> <!-- script should be before close body -->
+</body>
+</html>
