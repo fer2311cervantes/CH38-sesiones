@@ -1,7 +1,7 @@
 console.log("Script de sesion Web07");
 
 // getElementById : seleccionar y obtener una referencia a un elemento HTML
-document.getElementById("title").innerHTML="El elote en CDMX cuesta $30";
+//document.getElementById("title").innerHTML="El elote en CDMX cuesta $40";
 
 function handleTitle(){
     document.getElementById("title").style.color = "blue";
