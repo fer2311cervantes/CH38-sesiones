@@ -26,13 +26,24 @@
                 <h1>JS 03</h1>
             </div>
             <!-- description -->
+
+
+            <!-- Boton para leer información: -->
             <div class="col-md-6 col-9 mt-2 mt-md-0">
                 <p>Condicionales en Js</p>
-
+                <!-- <input id="user-input" type="number" value="12">
+                <button class="btn btn-warning" onclick="handleEstaciones()">Estacion del año</button> -->
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Selecciona el mes</span>
+                    <input id="user-input" type="number" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-lg">
+                </div>
+                <div class="d-grid gap-2 mt-2">
+                    <button class="btn btn-outline-warning" onclick="handleEstaciones()">Estacion del año</button>
+                </div>
+                <p id="message" class="mt-2"></p>
             </div>
-        </div>
-
-        <p id="message"></p>
+        </div>      
         
     </main>
 
