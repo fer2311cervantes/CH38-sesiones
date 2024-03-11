@@ -98,7 +98,157 @@ printListID("list-names",formatListMap(products));
 console.log(products);  
 printListID("list-second",styleListMap(products,"list-group-item list-group-item-danger"));
 
-const apellidos = ["cervantes","silva","medina","martinez"];
+/* const apellidos = ["cervantes","silva","medina","martinez"];
 for(const apellido of apellidos){
     console.log(`apellido en forof: ${apellido}`);
+} */
+
+// ---------------- forEach -------------------------
+/*
+ Método que se utiliza para iterar colecciones, arreglos.
+ Permite ejecutar una función por cada elemento del arreglo.
+
+automoviles.reverse().forEach( function(element, index, arrar){
+    console.log(element);
+});
+*/
+const autos = ["audi", "mazda","mclaren"];
+for(const auto of autos.reverse()) console.log(`auto: ${auto}`);
+autos.reverse().forEach(x => console.log(x));
+
+//forEach() and map() always need a callback function, forEach changes the original array,
+//while map creates a new array
+
+// ------------------- Uso de break en ciclos ----------------------------
+// break no detiene la ejecución de la iteración en curso y termina el ciclo.
+
+// Realizar la tabla de multiplicar del 5
+// usando for loop
+//for(let i=1;i<=10;i++) console.log(`5 * ${i} = ${i*5}`);
+/*
+for(let i=1;i<=10;i++){
+    if(i === 6) break;
+    console.log(`5 * ${i} = ${i*5}`);
+}   */
+/*
+for(let i=1 ; i<=5 ; i++){
+    console.log(`Tabla del ${i}:`);
+    for(let j=1; j<=10 ; j++) console.log(`${i} * ${j} = ${i*j}`)
+}*/
+romperFor:   //label
+for(let i=1 ; i<=5 ; i++){
+    console.log(`Tabla del ${i}:`);
+    for(let j=1; j<=10 ; j++){
+        if(i===1 && j===1) break romperFor;
+        console.log(`${i} * ${j} = ${i*j}`)
+    }
 }
+
+const equipos = [ 
+    ["Charly"  , "Axel"  , "Joce"    , "Alan"  ,"Karen", "Donaji", "Aline", "Ryan"], // 404
+    ["Pedrito" , "Ari"   , "Esquivel", "Uli"   , "Penny", "Yetzel", "Eric", "Jesús"], // Java.lio
+    ["Eric"   , "Chongo", "Giss"    , "Andres", "Fernando", "Frida", "Victor", "Dan", "Bastian"]  // LoopLegion
+];
+
+const iterateTeams = (teams,nameBreak) =>{
+    breakTeam:   //label
+    for(const team of teams){
+        for(const name of team){
+            console.log(`${name}`)
+            if(name.toLowerCase() === nameBreak.toLowerCase()) break breakTeam;
+        }
+    }
+}
+iterateTeams(equipos, 'axel');
+
+/** 
+ * iterar todas las personas, pero no imprimir a hiddenName
+ * 
+ * */
+/*
+const usoDeContinue = (teams, hiddenName ) =>{
+    for(const team of teams){ 
+        console.log("Equipo " + team);
+        sigPersona:
+        for(const name of team ){
+            if( name === hiddenName ) continue sigPersona;
+            console.log("Persona: " + name);           
+        }
+    }
+}
+
+usoDeContinue(equipos, "Erick" );*/
+
+// ============== Ciclo While ======================
+//                (while loop)
+/*
+ Crea un bucle que ejecuta una sentencia mientras la condición especificada
+ se cumpla.
+
+ Sintaxis:
+    while( condición) sentencia;
+
+    while ( condición ){
+        sentencias;
+    }
+
+*/
+/*
+let i = 10;
+while(i >= 1){
+    console.log(i);
+    i--;
+}*/
+
+const num = [];
+for(let i=0 ; i<10 ; i++){
+    num[i] = Math.round(Math.random()*50)+1;
+}
+//console.log(num);
+const colors = [
+    '<button class="btn btn-outline-warning" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-danger" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-success" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-primary" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-info" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-secondary" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-light" onclick="changeButtonColor()">click</button>'];
+console.log(colors.length);
+const changeButtonColor = () => {
+    document.getElementById("toChangeColor").innerHTML=`${colors[( Math.round(Math.random()*colors.length) )]}`;
+}
+
+// ============== Ciclo Do-While ======================
+/*
+ Crea un bucle que ejecuta una sentencia mientras la condición especificada
+ se cumpla. La evaluación se realiza después de ejecutar la sentencia.
+ Por lo tanto, la sentencia se va a ejecutar por lo menos una vez.
+
+ Sintaxis:
+
+    do {
+        sentencias;
+    } while( condición );
+
+*/
+/*
+do{
+    console.log(`Su numero de la suerte es: ${Math.round(Math.random()*10)}`)
+}while(confirm("desea continuar?"))
+*/
+
+const loopDoWhile = (start,end) =>{
+    do{
+        console.log(`doWhile: ${start}`);
+        start++;
+    }while(start<=end);
+}
+loopDoWhile(3,12);
+
+const loopWhile = (start,end) =>{
+    while(start<=end){
+        console.log(`while: ${start}`);
+        start++;
+    }
+}
+loopWhile(3,9);

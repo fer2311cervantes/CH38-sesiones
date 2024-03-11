@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootStrap style -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Exercise 1</title>
+</head>
+<body class="bg-dark text-light">
+
+    <!-- Menu -->
+    <div class="container-flex ">
+        <div class="row bg-secondary">
+            <div class="col-md-2 m-md-2">
+
+            <p id="menu"></p>
+                
+            </div>
+            <div class="col-md-7 text-center mt-md-2">
+                <h1>Exercise 1</h1>
+            </div>
+        </div>
+    </div>   <!--end menu ---------------------->
+
+
+    <main class="container text-center">
+        <!-- ------- 
+        <div class="row mt-5">
+            
+            <div class="col-md-3"><p class="text-warning">Common items (case sensitive):</p></div>
+            <div class="col"><p id="commonList" class="text-start text-info"></p></div>
+        </div>
+        -->
+        
+
+        <div class="row mt-3">
+            <div class="col-md-3"></div>
+            <!--                         add and remove                              -->
+            <div class="col-md-5">
+                <!--                         add start                              -->
+                <p class="mt-2">Add to sentence</p>
+                <div class="input-group input-group-lg ">
+                    <input id="input" type="text" class="form-control" placeholder="New item" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-lg">
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col"><button class="btn btn-outline-warning" onclick="addElement()">Add</button></div>
+                    <div class="col"><button class="btn btn-outline-danger" onclick="removeElement()">Remove</button></div>
+                </div>
+                
+                <div class=" mt-2">
+                    <h4 class="text-info">Sentence:</h4>
+                    <h5 id="myArr" class="text-warning"></h5>
+                </div>
+
+            </div>
+        </div>
+        
+    </main>
+    <footer class="mt-5"></footer>
+    <script src="/assets/js/menu.js"></script>
+    <script src="/assets/js/exercise1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
