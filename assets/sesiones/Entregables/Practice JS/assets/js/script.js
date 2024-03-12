@@ -77,42 +77,55 @@ for (let k = 1; k < entrada.length; k++) {
     }
 }
 console.log(entrada);
-//https://3con14.biz/js/tips-and-tricks/17-ordenamiento-por-burbuja.html
 
 
 
-
-const cardList = [1,1,2,2,3,3,4,4,5,5,6,6];
+//   GAME -------------------------------------------------------------------------------------
+let cardList = [];
 let count = 0;
 let selected = [];
 let finished = [];
 
+
 const resetList = () =>{
-    for(i = 0; i < 12 ; i++){
-        
-        //Math.floor(Math.random() * 10);
-    }
+    let rnumber = Math.floor((Math.random() * 6) + 1);
+
+    if(seeNewList(rnumber)) cardList.push(rnumber);
+
+    if(cardList.length < 12) resetList();
 }
+
+const seeNewList = (number) =>{
+    let status = false;
+    let count = 0;
+    for(i = 0 ; i < cardList.length ; i++){
+        if( number === cardList[i] ) count++;
+    }
+    if(count < 2){
+        status = true;
+    }
+
+    return status;
+}
+resetList();
+
 const card = (id) =>{
 
     if(count < 2){
-        //
         changeColor(id, cardList[id]);
         selected.push(id);
-        //console.log(`selected: ${selected}`); //_______________________
+        
         count++;
-        //console.log(count);    //_______________________
+        
         if(count == 2 && ( cardList[selected[0]] ===  cardList[selected[1]])){
             finished.push(selected[0]);
             finished.push(selected[1]);
             
-            //console.log(`finished: ${finished}`); //_______________________
         }
-    }
-    else{
+    } else{
         count = 0;
-        //console.log(count);    //_______________________
-        if(finished.includes(selected[0]) && finished.includes(selected[1])) ;//console.log(selected);
+    
+        if(finished.includes(selected[0]) && finished.includes(selected[1])) ;
         else{
             resetColor(selected[0]);
             resetColor(selected[1]);
@@ -120,7 +133,6 @@ const card = (id) =>{
         selected.pop();
         selected.pop();
         
-        //console.log(selected); //_______________________
     }
     
 };
@@ -130,22 +142,22 @@ const changeColor = (id, color) =>{
     let newColor = "";
     switch(color){
         case 1:
-            newColor = `<button class="btn btn-lg btn-warning" onclick="card(${id})" disabled>Hi !</button>`
+            newColor = `<button class="btn btn-lg btn-warning" onclick="card(${id})" disabled>___</button>`
             break;
         case 2:
-            newColor = `<button class="btn btn-lg btn-danger" onclick="card(${id})" disabled>Hi !</button>`
+            newColor = `<button class="btn btn-lg btn-danger" onclick="card(${id})" disabled>___</button>`
             break;
         case 3:
-            newColor = `<button class="btn btn-lg btn-info" onclick="card(${id})" disabled>Hi !</button>`
+            newColor = `<button class="btn btn-lg btn-info" onclick="card(${id})" disabled>___</button>`
             break;
         case 4:
-            newColor = `<button class="btn btn-lg btn-success" onclick="card(${id})" disabled>Hi !</button>`
+            newColor = `<button class="btn btn-lg btn-success" onclick="card(${id})" disabled>___</button>`
             break;
         case 5:
-            newColor = `<button class="btn btn-lg btn-primary" onclick="card(${id})" disabled>Hi !</button>`
+            newColor = `<button class="btn btn-lg btn-primary" onclick="card(${id})" disabled>___</button>`
             break;
         case 6:
-            newColor = `<button class="btn btn-lg btn-secondary" onclick="card(${id})" disabled>Hi !</button>`
+            newColor = `<button class="btn btn-lg btn-secondary" onclick="card(${id})" disabled>___</button>`
             break;
         default:
             break;
@@ -155,105 +167,22 @@ const changeColor = (id, color) =>{
 };
 
 const resetColor = (id) =>{
-    const originalColor = `<button class="btn btn-lg btn-outline-light" onclick="card(${id})">Hi !</button>`;
+    const originalColor = `<button class="btn btn-lg btn-outline-light" onclick="card(${id})">___</button>`;
     const newMessage = document.getElementById(`card${id}`);
     newMessage.innerHTML = originalColor;
 };
 
 const resetGame = () =>{
     count = 0;
-    for( i = 0 ; i < selected.length ; i++){
-        selected.pop();
-    }
-    console.log(`selected: ${selected}`); //_______________________
+    let selected = [];
+    let finished = [];
 
-    for( i = 0 ; i < finished.length ; i++){
-        finished.pop();
-    }
-    console.log(`finished: ${finished}`); //_______________________
-
-    for(i = 0 ; i < 13 ; i++){
+    for(i = 0 ; i < 12 ; i++){
         const cardToReset = document.getElementById(`card${i}`);
-        cardToReset.innerHTML = `<button class="btn btn-lg btn-outline-light" onclick="card(${i})">Hi !</button>`;
+        cardToReset.innerHTML = `<button class="btn btn-lg btn-outline-light" onclick="card(${i})">___</button>`;
     }
+    cardList = [];
     resetList();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* const getInputValueID = (id) => document.getElementById(id).value;
-const mostrarEstacion = (num) => {
-    let result = "";
-    switch(num){
-        case 1: case 2: case 12:
-            result = "invierno";
-            break;
-        case 3: case 4: case 5:
-            result = "primavera";
-            break;
-        case 6: case 7: case 8:
-            result = "verano";
-            break;
-        case 9: case 10: case 11:
-            result = "otoño";
-            break;
-        default:
-            result = "no existe";
-            break;
-    } 
-    return result;
-}
-const printMensaje = ( mensaje ) => {
-    document.getElementById("message").innerHTML= `
-    <div class="alert alert-success" role="alert">
-    ${ mensaje === "invierno" ? `<h1> ${mensaje} </h1>`:`<h5> ${mensaje} </h5>`}
-    </div>
-    `;
-}
-const handleEstaciones = () => {
-    const mes = parseInt(getInputValueID("user-input"));
-    const mensaje = mostrarEstacion(mes);
-    printMensaje(mensaje);
-}
-
-const colors = [
-    '<button class="btn btn-outline-warning" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-danger" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-success" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-primary" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-info" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-secondary" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-light" onclick="changeButtonColor()">click</button>'];
-let colorIndex = 0;
-const changeButtonColor = () => {
-    document.getElementById("toChangeColor").innerHTML=`${colors[colorIndex]}`;
-    if( colorIndex === 6) colorIndex = 0;
-    else colorIndex++;
-    //console.log( ( Math.round(Math.random()*colors.length) ) );
-    //console.log( `${colors[( Math.round(Math.random()*colors.length) )]}` );
-} */
 
 
