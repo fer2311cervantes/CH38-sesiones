@@ -174,8 +174,8 @@ const resetColor = (id) =>{
 
 const resetGame = () =>{
     count = 0;
-    let selected = [];
-    let finished = [];
+    selected = [];
+    finished = [];
 
     for(i = 0 ; i < 12 ; i++){
         const cardToReset = document.getElementById(`card${i}`);
