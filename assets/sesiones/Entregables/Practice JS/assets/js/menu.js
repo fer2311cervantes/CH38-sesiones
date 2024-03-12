@@ -1,5 +1,4 @@
-/* const imprimirEnParagraph= (id, mensaje) => document.getElementById(id).innerHTML = `${mensaje}`;
-imprimirEnParagraph("mainMenu","this is the menu"); */
+
 const mainMenu = (id) => {
     const menuRef = document.getElementById(id);
     menuRef.innerHTML =  `
@@ -23,28 +22,3 @@ const mainMenu = (id) => {
     `;
 }
 mainMenu("menu");
-
-
-/*
-    
-*/
-
-/* 
-function insertPrincipalMenu(){
-    const menuRef = document.getElementById("menu");
-
-    const pagesArray = ["about", "products", "contact"];
-
-    menuRef.innerHTML = ` 
-    <nav>
-      <ul>
-        <li> <a href="/index.html">Home</a>   </li>
-        <li> <a href="/assets/pages/about.html">About Us</a></li>
-        <li> <a href="/assets/pages/products.html">Products</a></li>
-     </ul>
-    </nav>
-    `;
- }
-
- insertPrincipalMenu();
-*/

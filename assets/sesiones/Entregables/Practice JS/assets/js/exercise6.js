@@ -26,15 +26,6 @@ const sortList = (arr) =>{
             console.log(arr);
         }
     }
-    //setTimeout(() => console.log("hi"),1000) ;
-}
-const timerTry = (index) => {
-    if(index < numbers.length){
-        console.log(numbers[index]);
-        setTimeout( function(){timerTry(index + 1);},1000);
-        
-    }
-    console.log("__");
 }
 
 const updateList = () => {
