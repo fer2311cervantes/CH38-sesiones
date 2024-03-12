@@ -3,7 +3,7 @@ let nameList = ['Math', 'English', 'Programming','Biology'];
 
 const superList = (list) => list.map((e,i) => `
 <li class="list-group-item">${i}.    ${e}  
-<button class="btn btn-danger ms-5" onclick="removeThisElement(${i})">X</button>
+<button class="btn btn-danger ms-2" onclick="removeThisElement(${i})">X</button>
 <button class="btn btn-info " onclick="moveThisElementStart(${i})"><-</button>
 <button class="btn btn-info " onclick="moveThisElementEnd(${i})">-></button>
 <button class="btn btn-warning " onclick="showBreak(${i})">print</button>

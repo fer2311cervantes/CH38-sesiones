@@ -1,59 +1,3 @@
-const getInputValueID = (id) => document.getElementById(id).value;
-const mostrarEstacion = (num) => {
-    let result = "";
-    switch(num){
-        case 1: case 2: case 12:
-            result = "invierno";
-            break;
-        case 3: case 4: case 5:
-            result = "primavera";
-            break;
-        case 6: case 7: case 8:
-            result = "verano";
-            break;
-        case 9: case 10: case 11:
-            result = "otoño";
-            break;
-        default:
-            result = "no existe";
-            break;
-    } 
-    return result;
-}
-const printMensaje = ( mensaje ) => {
-    document.getElementById("message").innerHTML= `
-    <div class="alert alert-success" role="alert">
-    ${ mensaje === "invierno" ? `<h1> ${mensaje} </h1>`:`<h5> ${mensaje} </h5>`}
-    </div>
-    `;
-}
-const handleEstaciones = () => {
-    const mes = parseInt(getInputValueID("user-input"));
-    const mensaje = mostrarEstacion(mes);
-    printMensaje(mensaje);
-}
-
-const colors = [
-    '<button class="btn btn-outline-warning" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-danger" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-success" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-primary" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-info" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-secondary" onclick="changeButtonColor()">click</button>', 
-    '<button class="btn btn-outline-light" onclick="changeButtonColor()">click</button>'];
-let colorIndex = 0;
-const changeButtonColor = () => {
-    document.getElementById("toChangeColor").innerHTML=`${colors[colorIndex]}`;
-    if( colorIndex === 6) colorIndex = 0;
-    else colorIndex++;
-    //console.log( ( Math.round(Math.random()*colors.length) ) );
-    //console.log( `${colors[( Math.round(Math.random()*colors.length) )]}` );
-}
-/*Sesion */
-
-
-
-
 //Exercise #1 -------------------------------------
 console.log("Exercise #1:  -----------------------")
 let arr = ["This", "is", "a", "sentence."];
@@ -138,150 +82,178 @@ console.log(entrada);
 
 
 
+const cardList = [1,1,2,2,3,3,4,4,5,5,6,6];
+let count = 0;
+let selected = [];
+let finished = [];
 
-
-/*
-let a = 5;
-let b = 10;
-console.log("a: " + a + ", b: " + b);
-[a , b] = [b , a];
-console.log("a: " + a + ", b: " + b);*/
-
-
-
-
-
-
-
-
-/*Sesion*/
-//false:  false, "", 0, null, undefined, NaN
-const gatoConBota = {
-    name: "Gato",
-    numVidas: 1,
-    color: "naranja"
-};
-if( gatoConBota.pareja != undefined) console.log( gatoConBota.pareja )
-//else console.log("el gato no tiene pareja");
-
-gatoConBota.pareja && console.log( gatoConBota.pareja ); 
-//gatoConBota.color && console.log( gatoConBota.color );
-
-// Insertando imagen
-const insertImage = () => document.getElementById("gato-image").innerHTML = `
-            <img class="img-fluid" src="${gatoConBota.image}" alt="${gatoConBota.name}">
-            `;
-gatoConBota.image && gatoConBota.name && insertImage();
-
-
-
-
-
-//console.log("Eliminando elementos: " + copyOfNames.splice(1,2));
-//console.log("Eliminando elementos: " + copyOfNames.splice(1,0,"fer","cer"));
-
-
-/* copyOfNames.splice(0,4,"fer","dany","raul","alex","rafa");
-const formatListFor = (list) => {
-    const newList = [];
-    for (let i = 0; i < list.length; i++) {
-        newList[i] = `<li>${list[i]}</li>`;
-        //console.log(listOfNames[i]);
+const resetList = () =>{
+    for(i = 0; i < 12 ; i++){
+        
+        //Math.floor(Math.random() * 10);
     }
-    return newList;
 }
-const printListID = (id,list) => document.getElementById(id).innerHTML = list.join(""); */
-//printListID("list-names",formatListFor(copyOfNames));
+const card = (id) =>{
 
-// Iterar el arreglo y generar un nuevo array.
-// método map 
-
-// Esta función se va a llamar por cada elemento del arreglo que tiene el método map
-/* const myFncCallBack = ( element, index , array ) => `index: ${index} element: ${element} => duplicate: ${element * 2}`;
-const numbers = [1,5,7]
-const duplicateFnc = numbers.map( myFncCallBack );
-console.log( numbers );
-console.log( duplicateFnc );
-const duplicate = numbers.map( e => e * 2);
-console.log(duplicate);
-
-const products = ["tortillas","papas","jitomates","cebolla"]; */
-
-/**
- * @param {array} list elements to format for show in a list <li></li> 
- * @returns elements with list format
- */
-const formatListMap = (list) => list.map( e => `<li>${e}</li>`);
-/**
- * 
- * @param {array} list 
- * @param {string} style 
- * @returns 
- */
-/* const styleListMap = (list,style) => list.map(e => `<li class="${style}">${e}</li>`)
-printListID("list-names",formatListMap(products));
-console.log(products);  
-printListID("list-second",styleListMap(products,"list-group-item list-group-item-danger")); */
-
-/* const apellidos = ["cervantes","silva","medina","martinez"];
-for(const apellido of apellidos){
-    console.log(`apellido en forof: ${apellido}`);
-} */
-
-// ---------------- forEach -------------------------
-/*
- Método que se utiliza para iterar colecciones, arreglos.
- Permite ejecutar una función por cada elemento del arreglo.
-
-automoviles.reverse().forEach( function(element, index, arrar){
-    console.log(element);
-});
-*/
-const autos = ["audi", "mazda","mclaren"];
-//for(const auto of autos.reverse()) console.log(`auto: ${auto}`);
-//autos.reverse().forEach(x => console.log(x));
-
-//forEach() and map() always need a callback function, forEach changes the original array,
-//while map creates a new array
-
-// ------------------- Uso de break en ciclos ----------------------------
-// break no detiene la ejecución de la iteración en curso y termina el ciclo.
-
-// Realizar la tabla de multiplicar del 5
-// usando for loop
-//for(let i=1;i<=10;i++) console.log(`5 * ${i} = ${i*5}`);
-/*
-for(let i=1;i<=10;i++){
-    if(i === 6) break;
-    console.log(`5 * ${i} = ${i*5}`);
-}   */
-/*
-for(let i=1 ; i<=5 ; i++){
-    console.log(`Tabla del ${i}:`);
-    for(let j=1; j<=10 ; j++) console.log(`${i} * ${j} = ${i*j}`)
-}*/
-/** 
- * iterar todas las personas, pero no imprimir a hiddenName
- * 
- * */
-/*
-const usoDeContinue = (teams, hiddenName ) =>{
-    for(const team of teams){ 
-        console.log("Equipo " + team);
-        sigPersona:
-        for(const name of team ){
-            if( name === hiddenName ) continue sigPersona;
-            console.log("Persona: " + name);           
+    if(count < 2){
+        //
+        changeColor(id, cardList[id]);
+        selected.push(id);
+        //console.log(`selected: ${selected}`); //_______________________
+        count++;
+        //console.log(count);    //_______________________
+        if(count == 2 && ( cardList[selected[0]] ===  cardList[selected[1]])){
+            finished.push(selected[0]);
+            finished.push(selected[1]);
+            
+            //console.log(`finished: ${finished}`); //_______________________
         }
     }
+    else{
+        count = 0;
+        //console.log(count);    //_______________________
+        if(finished.includes(selected[0]) && finished.includes(selected[1])) ;//console.log(selected);
+        else{
+            resetColor(selected[0]);
+            resetColor(selected[1]);
+        }
+        selected.pop();
+        selected.pop();
+        
+        //console.log(selected); //_______________________
+    }
+    
+};
+
+
+const changeColor = (id, color) =>{
+    let newColor = "";
+    switch(color){
+        case 1:
+            newColor = `<button class="btn btn-lg btn-warning" onclick="card(${id})" disabled>Hi !</button>`
+            break;
+        case 2:
+            newColor = `<button class="btn btn-lg btn-danger" onclick="card(${id})" disabled>Hi !</button>`
+            break;
+        case 3:
+            newColor = `<button class="btn btn-lg btn-info" onclick="card(${id})" disabled>Hi !</button>`
+            break;
+        case 4:
+            newColor = `<button class="btn btn-lg btn-success" onclick="card(${id})" disabled>Hi !</button>`
+            break;
+        case 5:
+            newColor = `<button class="btn btn-lg btn-primary" onclick="card(${id})" disabled>Hi !</button>`
+            break;
+        case 6:
+            newColor = `<button class="btn btn-lg btn-secondary" onclick="card(${id})" disabled>Hi !</button>`
+            break;
+        default:
+            break;
+    }
+    const newMessage = document.getElementById(`card${id}`);
+    newMessage.innerHTML = newColor;
+};
+
+const resetColor = (id) =>{
+    const originalColor = `<button class="btn btn-lg btn-outline-light" onclick="card(${id})">Hi !</button>`;
+    const newMessage = document.getElementById(`card${id}`);
+    newMessage.innerHTML = originalColor;
+};
+
+const resetGame = () =>{
+    count = 0;
+    for( i = 0 ; i < selected.length ; i++){
+        selected.pop();
+    }
+    console.log(`selected: ${selected}`); //_______________________
+
+    for( i = 0 ; i < finished.length ; i++){
+        finished.pop();
+    }
+    console.log(`finished: ${finished}`); //_______________________
+
+    for(i = 0 ; i < 13 ; i++){
+        const cardToReset = document.getElementById(`card${i}`);
+        cardToReset.innerHTML = `<button class="btn btn-lg btn-outline-light" onclick="card(${i})">Hi !</button>`;
+    }
+    resetList();
 }
 
-usoDeContinue(equipos, "Erick" );*/
 
 
-/*
-let i = 10;
-while(i >= 1){
-    console.log(i);
-    i--;
-}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const getInputValueID = (id) => document.getElementById(id).value;
+const mostrarEstacion = (num) => {
+    let result = "";
+    switch(num){
+        case 1: case 2: case 12:
+            result = "invierno";
+            break;
+        case 3: case 4: case 5:
+            result = "primavera";
+            break;
+        case 6: case 7: case 8:
+            result = "verano";
+            break;
+        case 9: case 10: case 11:
+            result = "otoño";
+            break;
+        default:
+            result = "no existe";
+            break;
+    } 
+    return result;
+}
+const printMensaje = ( mensaje ) => {
+    document.getElementById("message").innerHTML= `
+    <div class="alert alert-success" role="alert">
+    ${ mensaje === "invierno" ? `<h1> ${mensaje} </h1>`:`<h5> ${mensaje} </h5>`}
+    </div>
+    `;
+}
+const handleEstaciones = () => {
+    const mes = parseInt(getInputValueID("user-input"));
+    const mensaje = mostrarEstacion(mes);
+    printMensaje(mensaje);
+}
+
+const colors = [
+    '<button class="btn btn-outline-warning" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-danger" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-success" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-primary" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-info" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-secondary" onclick="changeButtonColor()">click</button>', 
+    '<button class="btn btn-outline-light" onclick="changeButtonColor()">click</button>'];
+let colorIndex = 0;
+const changeButtonColor = () => {
+    document.getElementById("toChangeColor").innerHTML=`${colors[colorIndex]}`;
+    if( colorIndex === 6) colorIndex = 0;
+    else colorIndex++;
+    //console.log( ( Math.round(Math.random()*colors.length) ) );
+    //console.log( `${colors[( Math.round(Math.random()*colors.length) )]}` );
+} */
+
+

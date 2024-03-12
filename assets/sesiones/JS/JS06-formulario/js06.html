@@ -12,25 +12,48 @@
     <title>Sesión JS06</title>
 </head>
 
-<body class="">
+<body class="bg-dark text-light">
     <header></header>
-    <main class="container text-center">
+    <main class="container ">
 
         <!-- div.row#principal-row>div.col*3 -->
         <div class="row align-items-center justify-content-center" id="principal-row">
 
-            <!-- imagen de dino -->
-            <div class="col-md-3 col-10">
-                <!-- formulario -->
-                <section id="register">
-
-                </section>
-            </div>
-            <!-- Lista -->
-            <div class="col-md-3 col-3 mt-2 mt-md-0">
+            <div class="col-md-9 col-12 mt-2 mt-md-0">
                 <h1>DOM</h1>
-                <ul id="list-names"></ul> <!--para imprimir listas aqui-->
-                <ul id="list-second"></ul>
+                Formulario
+                <!---->
+                <form id="register-form" class="row g-3">
+                    <div class="col-md-6">
+                      <label for="inputEmail" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="inputEmail" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputPassword" required>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label">Address</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                        <label class="form-check-label" for="gridCheck">
+                          Check me out
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                    
+                    <ul id="error-message" class="text-danger"></ul>
+                  </form>
+
+
+
+                <!---->
             </div>
 
 

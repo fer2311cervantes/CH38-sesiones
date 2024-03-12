@@ -18,7 +18,7 @@
                 <p id="menu"></p>
                 
             </div>
-            <div class="col-md-7 text-center mt-md-2">
+            <div class="col-md-7 text-center mt-md-2 ">
                 <h1>Home</h1>
             </div>
         </div>
@@ -31,33 +31,41 @@
     
     <main class="container text-center mt-5">
         <!-- ------- -->
-        <div class="row align-items-center justify-content-center" id="principal-row">
+        <div class="row align-items-center justify-content-center " id="principal-row">
             <!-- Lista ----------------------------------------------------------------------------------------------->
-            <div class="col-md-3 col-3 mt-2 mt-md-0">
-                <p>array y ciclos</p>
-                <ul id="list-names"></ul> <!--para imprimir listas aqui-->
-                <ul id="list-second"></ul>
+            
+            <div class="col-md-4">
+                <div class="row">
+                    <h4 class="text-warning">Let´s play a game:</h4>
+                </div>
+    
+                <div class="row my-2">
+                    <div class="col" id="card0"><button class="btn btn-lg btn-outline-light" onclick="card(0)">Hi !</button></div>
+                    <div class="col" id="card1"><button class="btn btn-lg btn-outline-light" onclick="card(1)">Hi !</button></div>
+                    <div class="col" id="card2"><button class="btn btn-lg btn-outline-light" onclick="card(2)">Hi !</button></div>
+                </div>
+                <div class="row my-2">
+                    <div class="col" id="card3"><button class="btn btn-lg btn-outline-light" onclick="card(3)">Hi !</button></div>
+                    <div class="col" id="card4"><button class="btn btn-lg btn-outline-light" onclick="card(4)">Hi !</button></div>
+                    <div class="col" id="card5"><button class="btn btn-lg btn-outline-light" onclick="card(5)">Hi !</button></div>
+                </div>
+                <div class="row my-2">
+                    <div class="col" id="card6"><button class="btn btn-lg btn-outline-light" onclick="card(6)">Hi !</button></div>
+                    <div class="col" id="card7"><button class="btn btn-lg btn-outline-light" onclick="card(7)">Hi !</button></div>
+                    <div class="col" id="card8"><button class="btn btn-lg btn-outline-light" onclick="card(8)">Hi !</button></div>
+                </div>
+                <div class="row my-2">
+                    <div class="col" id="card9"><button class="btn btn-lg btn-outline-light" onclick="card(9)">Hi !</button></div>
+                    <div class="col" id="card10"><button class="btn btn-lg btn-outline-light" onclick="card(10)">Hi !</button></div>
+                    <div class="col" id="card11"><button class="btn btn-lg btn-outline-light" onclick="card(11)">Hi !</button></div>
+                </div>
+                <div class="row my-2">
+                    <div class="col"><button class="btn btn-lg btn-outline-danger" onclick="resetGame()">Reset</button></div>
+                </div>
             </div>
 
 
-            <!-- Prueba para decir la estacion: -------------------------------------------------------------------->
-            <div class="col-md-6 col-9 mt-2 mt-md-0">
-                <!-- <input id="user-input" type="number" value="12">
-                <button class="btn btn-warning" onclick="handleEstaciones()">Estacion del año</button> -->
-                <div class="input-group input-group-lg">
-                    <span class="input-group-text" id="inputGroup-sizing-lg">Selecciona el mes</span>
-                    <input id="user-input" type="number" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-lg">
-                </div>
-                <div class="d-grid gap-2 mt-2">
-                    <button class="btn btn-outline-warning" onclick="handleEstaciones()">Estacion del año</button>
-                </div>
-
-                <div id="randomColorButton" class="d-grid gap-2 mt-2">
-                    <p id="toChangeColor"><button class="btn btn-outline-light" onclick="changeButtonColor()">click</button></p>
-                </div>
-                <p id="message" class="mt-2"></p>
-            </div>
+            
 
 
         </div>    

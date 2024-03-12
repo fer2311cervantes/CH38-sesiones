@@ -34,14 +34,26 @@ const changeElementByQuerySelector = (selector) =>{
 };
 changeElementByQuerySelector("h1");  //"header h1"
 
-const newElement = () =>{
+const newElement = (type , father) =>{
     //crear elemento en memoria
-    const newElement = document.createElement("section");
-    newElement,innerHTML = `
+    const newElem = document.createElement(type);
+    newElem.innerHTML = `
         <div class="row">
-            <div class="col-3"> col-3 </div>
+            <div class="col-3 columna-dinamica fondo-rosa"> col-3 </div>
             <div class="col-9"> col-9 </div>
         </div>
     `;
+    const mainRef = document.querySelector(father);
+    mainRef.appendChild( newElem );
 };
-newElement();
+newElement("section", "main");
+
+/** Cambiar el color de fuente y fondo de un elemento */
+const changeColor = () => {
+    const textToChangeColor = document.querySelector("#columna-dinamica");
+    console.log(textToChangeColor);
+    textToChangeColor.style.color = "cyan";
+    textToChangeColor.style.border = "thin solid red";
+  };
+  
+  changeColor(); //bg-dark text-light

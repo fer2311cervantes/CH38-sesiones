@@ -15,6 +15,9 @@ const mainMenu = (id) => {
         <li><a class="dropdown-item" href="/assets/pages/exercise4.html">Exercise 4</a></li>
         <li><a class="dropdown-item" href="/assets/pages/exercise5.html">Exercise 5</a></li>
         <li><a class="dropdown-item" href="/assets/pages/exercise6.html">Exercise 6</a></li>
+        <hr>
+        <li><a class="dropdown-item" href="https://github.com/fer2311cervantes/CH38-sesiones/tree/main/assets/sesiones/Entregables/Practice%20JS">GitHub</a></li>
+        <li><a class="dropdown-item" href="https://www.linkedin.com/in/ra%C3%BAl-fernando-cervantes-5239a4214/">LinkedIn</a></li>
       </ul>
     </div>
     `;
