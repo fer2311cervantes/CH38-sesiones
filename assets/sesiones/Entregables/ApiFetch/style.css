@@ -7,7 +7,7 @@
 :root{
     --color_text: #5c3d5b;
     --color_element_fieldset: #4d3e6b;
-    --color_top_blue: #464140;
+    --color_top_blue: #141f28;
     
 }
 
@@ -23,4 +23,8 @@ header{
 }
 body{
     background-color: #19292C;
+    
+}
+main{
+    margin-top: 60px;
 }
