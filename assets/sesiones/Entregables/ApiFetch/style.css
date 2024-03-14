@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color_text: #5c3d5b;
+    --color_element_fieldset: #4d3e6b;
+    --color_top_blue: #464140;
+    
+}
+
+header{
+    text-align: center;
+    /*margin: 20px;
+    font-size: 30px;
+    */
+    border:none;
+    padding: 30px;
+    background: var(--color_top_blue);
+    color: white;
+}
+body{
+    background-color: #19292C;
+}
