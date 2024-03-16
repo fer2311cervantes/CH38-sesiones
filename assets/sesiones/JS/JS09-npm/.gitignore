@@ -1,0 +1,7 @@
+# no permitir la carpeta node_modules
+node_module
+
+#no permitir videos
+.avi
+.mkv
+.mp4

@@ -31,3 +31,11 @@ localStorage.setItem("myObject",JSON.stringify( {name:"fernando",age:26} ));
 const recuperDatos = localStorage.getItem( "myObject" );
 const objectDatos = JSON.parse(recuperDatos) ;
 console.log( objectDatos ); // string
+
+/* localStorage.setItem("myName","isFernando");
+
+const resetButton = document.querySelector("#resetInterval");
+resetButton.addEventListener("click", (e)=>{
+    localStorage.removeItem("myName");
+    //enableStartButton();
+}); */

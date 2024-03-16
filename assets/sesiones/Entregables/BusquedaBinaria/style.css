@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color_answer: #ffffff;
+    --color_instructions:#347cd9;
+    --color_instructions2:#2A5C9D;
+    --color_title: #FFC300;
+}
+#anwser-text{
+    color: var(--color_answer);
+}
+#instrutions-text{
+    color: var(--color_instructions);
+}
+#main-title{
+    color: var(--color_title);
+}
