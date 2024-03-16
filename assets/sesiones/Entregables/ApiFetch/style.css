@@ -8,10 +8,10 @@
     --color_background: #1b4a5d;
     --color_top_blue: #141f28;
     --color_card_background: #19292C;
-    --color_card_image_background: #4a8a95;
+    --color_card_image_background: #dae9eb;
     --color_button_background: #0b2631;
     --color_button_text: white;
-    
+    /*--color_message: #FFC300; #4a8a95*/
 }
 
 header{
@@ -34,16 +34,17 @@ main{
 }
 #user-cards{
     display: flex;
-    justify-content: start;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 2em;
 }
 .card{
-    width: 280px;
+    width: 260px;
     background-color: var(--color_card_image_background);
     margin: 20px;
-    border-radius: 4.5em 0.5em 0.5em 0.5em;
-    text-align: start;
+    /*border-radius: 4.5em 0.5em 0.5em 0.5em;*/
+    border-radius: 0.5em;
+    text-align: end;
 }
 .card:hover{
     transform: scale(1.01); /* Increase 1% size when activered*/
@@ -53,8 +54,7 @@ main{
 }
 .card-body{
     color: white;
-    text-align: end;
-    border-radius: 5em 0em 0.5em 0.5em;
+    border-radius: 0em 0em 0.5em 0.5em;
     background-color: var(--color_card_background);
     padding: 1em;
     font-size: 12px;
