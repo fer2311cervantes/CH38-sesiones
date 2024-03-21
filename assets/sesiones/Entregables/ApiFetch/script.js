@@ -15,12 +15,14 @@ const printCards = ( cards ) => document.getElementById("user-cards").innerHTML 
 
 let imTired = 0;
 const handleButton = () =>{
-    if( imTired === 0){   //i don know how to prevent to press the button many times :(
+    if( imTired === 0){   //I don´t know how to prevent to press the button many times :(
     const myURL = "https://reqres.in/api/users?delay=3"; //url with users info
     printMessage("user-cards", "");  //remove user cards every time I push the button
+
     localStorage.getItem("users") || printMessage("text-info", "Loading . . .");  //show message loading
     localStorage.getItem("users") && getUsersLS(); //if users exist in local storage get from there
     localStorage.getItem("users") || getUsersAPI(myURL); //if users does not exist in local storage get from API
+    
     imTired = 1;
     }
 }
