@@ -44,12 +44,33 @@ public class CondicionalIf {
 		System.out.println( edad < 18 ? "No puede votar" : "Si puede votar");
 		
 		
+		// --------------------------------------------------------------
+		// -------------- Clase Scaner --------------------------------
+
 		Scanner sc;
 		sc = new Scanner( System.in );
 		
-		System.out.println("Escribe tu nombre: ");
-		String myName = sc.nextLine(); //lee toda la linea hasta /n
-		System.out.println("Tu nombre es: " + myName);
+		System.out.print("Escribe tu nombre: ");
+		String myName = sc.nextLine(); // lee toda la línea hasta /n"
+	
+		System.out.print("Escribe tu apellido: ");
+		String myLastName = sc.nextLine(); 
+		
+		System.out.print("Escribe tu edad: ");
+		int age = 0;
+		if( sc.hasNextInt()  ) {
+			age = sc.nextInt(); // lee un valor numérico entero
+		}
+		sc.nextLine(); // consumimos el resto del buffer (\n)			
+		
+		System.out.print("Escribe tu dirección: ");
+		String address = sc.nextLine(); 
+				
+		System.out.println("Tu nombre es: " + myName + " " + myLastName);
+		System.out.println("Edad " + age);
+		System.out.println("En 10 años tendrás " + (age + 10));
+		System.out.println("Vives en: " + address);
+		
 		sc.close();
 	}
 
