@@ -101,12 +101,27 @@ public class HolaMundo {
 	   // && (AND) retorna true si ambos operadores son true
 	   // || (OR) retorna true si cualquiera de los operandos es true
 	   // !  (NOT) invierte el resultado booleano
-	   boolean a = true;
-	   boolean b = false;
-	   boolean c = true;
-	   System.out.println( (a && b) || (a && c) );   // true
-	   System.out.println( a || b || c && a );       // true
-	   System.out.println( !(a || b) && (!a || c) ); // false   	  
-	   System.out.println( a || b && c || a && b  ); // true
+		
+	   //boolean a = true;
+	   //boolean b = false;
+	   //boolean c = true;
+	   //System.out.println( (a && b) || (a && c) );   // true
+	   //System.out.println( a || b || c && a );       // true
+	   //System.out.println( !(a || b) && (!a || c) ); // false   	  
+	   //System.out.println( a || b && c || a && b  ); // true
+	   
+	   int x = 5;
+	   if( x < 10)
+	   System.out.println("holi");
+	   else {
+		   System.out.println("que onda");
+	   }
+		   
+	   
+	   
+	   byte b = 12;
+	   b += 2 + (2*Byte.MAX_VALUE);
+	   System.out.println(b);
+	   
 	}
 }

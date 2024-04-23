@@ -1,6 +1,8 @@
 package com.zoo;
 
-public class Cat extends Feline{
+import java.io.Serializable;
+
+public class Cat extends Feline implements Pet, Serializable{
 	
 	private String name;
 	
@@ -24,6 +26,18 @@ public class Cat extends Feline{
 		return "Miau";
 	}
 	
+	public String makeANoise(Cat streetCat) {
+		if( streetCat.getAge() > this.getAge() ) {
+			return "prrrrrr";
+		} else {
+			return "Raaaauuuullll";
+		}
+					
+	}
 	
+	@Override
+	public String trick() {		
+		return "Te desprecio" ;
+	}
 	
 }
